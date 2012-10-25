@@ -8,8 +8,8 @@ module Translit
 
     map = self.send(language.to_s).sort_by {|k,v| v.length <=>  k.length}
     map.each do |translit_key, translit_value|
-      text.gsub!(translit_key.capitalize, translit_value.first)
-      text.gsub!(translit_key, translit_value.last)
+      text.gsub(translit_key.capitalize, translit_value.first)
+      text.gsub(translit_key, translit_value.last)
     end
     text
   end
